@@ -1,9 +1,22 @@
+// Флексы
+
+// Флексы в ряд
 @mixin flex-r {
     display: flex;
     flex-direction: row;
 }
-
+// Флексы в колонку
 @mixin flex-c {
     display: flex;
     flex-direction: column;
+}
+
+// Стиль текста
+
+// основной
+@mixin text-style ($fz:18) {
+    color: #ffffff;
+    font-size: $fz+px;
+    font-weight: 400;
+    letter-spacing: 2px;
 }
