@@ -28,13 +28,19 @@ a {
             width: 100%;
             height: 100%;
             z-index: 3;
-            padding: 40px 25px 0 25px;
+
             
             // Верхняя часть меню
             .header__nav{
                 @include flex-r;
                 justify-content: space-between;
                 width: 100%;
+                position: relative;
+                padding: 40px 25px 40px 25px;
+                @media (max-width: 767.99px){
+                    background-color: rgba($color: #434857, $alpha: 0.4);
+                }
+                // Лого
                 .header__logo{
                     @include text-style (24);
                     letter-spacing: 5.52px;
@@ -52,13 +58,49 @@ a {
                         transform: translatey(-50%);
                     }
                 }
+
+                // Бургер
+                .header__burger{
+                    display: none;
+                    @media (max-width: 767.99px){
+                    display: block;
+                    }
+                }
+                // Кнопки навигици
                 .header__nav-bottons{
                     @include flex-r;
                     @include text-style (18);
                     letter-spacing: 1.53px;
                     line-height: 20px;
+                    @media (max-width: 767.99px){
+                        
+                        position: absolute;
+                        text-align: center;
+                        @include flex-c;
+                        right: 0;
+                        top:30px;
+                        opacity: 0;
+                        background-color: rgba($color: #2d3651, $alpha: 0.85);
+                        .header__nav-list{
+                            padding: 10px 20px;
+                            &:last-child{
+                                padding: 10px 0 10px 0 ;
+                            }
+                        }  
+                    }
+                    &.active{
+                        opacity: 1;
+                        transition: 0.8s ;
+                    }
                     .header__nav-list{
                         padding: 0 20px 0 20px;
+                        a {
+                            transition: 0.5s;
+                        }
+                        &:hover a{
+                            transition: 0.5s;
+                            color:$color-hover;
+                        }
                         &:last-child{
                             padding: 0 0 0 20px;
                         }
@@ -75,13 +117,74 @@ a {
                     font-weight: 300;
                     letter-spacing: 4.8px;
                     text-transform: uppercase;
-                    padding:162px 0 0 0;
+                    padding:122px 0 0 0;
                     width: 100%;
                 }
                 .header__buttoms{
                     @include flex-r;
+                    .header__buttom{
+                        &-link{
+                            margin: 340px 0 0 0;
+                        }
+                        .btn{
+                            @include text-style;
+                            letter-spacing: 1.89px;
+                            padding: 19px 70px;
+                            border: solid 1px $btn-border;
+                            background-color: rgba($color: #434857, $alpha: 0.5);
+                            transition: 0.5s;
+                            &:hover{
+                                background-color: $color-hover;
+                                transition: 0.3s;
+                            }
+                        }
+                    }
                 }
             }
         }
     }
+    // Бургер оформление
+.header__burger{
+    height: 20px;
+    width: 30px;
+    position: relative;
+    &::after,
+    &::before,
+    span{
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 3px;
+    transition: 0.3s;
+    }
+    &::after{
+      bottom: 0;
+    }
+    span{
+      top: 50%;
+      transform: translatey(-50%);
+    }
+    // При активном бургере
+    &.active {
+      z-index: 5;
+      &::after{
+        top: 50%;
+        transform: translatey(-50%);
+        transform: rotate(45deg);
+        transition: 0.3s;
+      }
+      span{
+        opacity: 0;
+        transition: 0.3s;
+      }
+      &::before{
+        top: 50%;
+        transform: translatey(-50%);
+        transform: rotate(-45deg);
+        transition: 0.3s;
+      }
+    }
+      
+}
 }
