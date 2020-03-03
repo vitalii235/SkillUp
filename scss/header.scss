@@ -1,8 +1,9 @@
 @import "mixins";
-a {
-    color: #fff;
-}
+
 .container{
+    a {
+        color: #fff;
+    }
     margin: 0 auto;
     font-family: Roboto;
     .header{
