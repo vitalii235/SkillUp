@@ -33,6 +33,9 @@
             "bl8 bl9";   
         }
     @media (max-width: 575.99px){
+        margin: 20px;
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas:
@@ -53,6 +56,9 @@
         position: relative;
         min-height: calc(33vh - 12px);
         overflow: hidden;
+        @media (max-width: 575.99px){
+            min-height: 43vh; 
+        }
         &:hover .skill__item__img{
             transform: scale(1.1);
         }
@@ -123,4 +129,33 @@
         }
     }
     
+    
+}
+// Кнопка
+.skils__botn{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px 0 40px 0;
+    width: calc(100% - 20px);
+    @media (max-width: 575.99px){
+        width: calc(100% - 40px); 
+        padding: 0 0 25px 0;
+    }
+    .botn{
+        @include text-style (18);
+        color: #ffffff;
+        display: inline-block;
+        border: 2px solid #2d3651;
+        background-color: rgba(45, 54, 81, 0.8);
+        padding: 19px 95px;
+        &:hover{
+            background-color: $color-hover;
+        }
+        @media (max-width: 575.99px){
+            padding: 19px 0;
+            width: 100%;
+            text-align: center;
+        }
+    }
 }
