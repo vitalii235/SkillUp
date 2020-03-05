@@ -21,10 +21,18 @@
     font-weight: 400;
     letter-spacing: 2px;
 }
-
+@mixin text-description-title {
+    font-family: "Roboto Slab";
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    line-height: 48px; 
+}
 
 
 // Переменные цвета
  $overlay:#2d3651;
  $color-hover:#d66926;
  $btn-border:#f9f9fa;
+ $bckg-description:#e5e5e5;
+ $descr-color:#637588;
