@@ -17,7 +17,7 @@
         align-content: center;
         .header__overlay{
             position: absolute;
-            z-index: 2;
+            z-index: 0;
             background-color: rgba($color: #2d3651, $alpha: 0.7);
             width: 100%;
             height: 100%;
@@ -28,10 +28,9 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            
             width: 100%;
             height: 100%;
-            z-index: 3;
+            z-index: 2;
             
             
             // Верхняя часть меню
@@ -42,6 +41,7 @@
                 max-width:1340px;
                 position: relative;
                 padding: 40px 20px 40px 27px;
+                
                 @media (max-width: 768px) {
                     background-color: rgba($color: #434857, $alpha: 0.4);
                 }
@@ -93,8 +93,11 @@
                         }  
                     }
                     &.active{
+                        position: absolute;
                         display: block;
                         transition: 0.8s ;
+                        z-index: 20;
+                        right: 20px;
                         
                     }
                     .header__nav-list{
@@ -120,7 +123,10 @@
             justify-content: center;
             text-align: center;
             position: relative;
-            z-index: 8;
+            z-index: 2;
+            &.active{
+                z-index: 0; 
+            }
             .header__company-name{
                 font-family: "Roboto Slab";
                 font-size: 60px;
@@ -153,9 +159,13 @@
             .header__buttoms{
                 @include flex-r;
                 margin: 0 auto;
+                &.active{
+                    z-index: 0;
+                }
                 @media (max-width: 575.99px){
                     @include flex-c;
-                    
+                    align-items: center;
+                    justify-content: center;
                     }
                 .header__buttom{
                     margin: 60px 20px 0 0;
@@ -236,7 +246,7 @@
     }
     // При активном бургере
     &.active {
-      z-index: 5;
+      z-index: 15;
       &::after{
         top: 50%;
         transform: translatey(-50%);

@@ -1,0 +1,104 @@
+@import "mixins";
+
+.post{
+    
+    &__container{
+        max-width: 1340px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        padding: 0 20px 0 20px;
+    }
+    &__title{
+        @include text-description-title;
+        color: $overlay;
+        text-align: left;
+        width: 100%;
+    }
+    &__block{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        grid-template-areas: 
+                    "gb1 gb1 gb2 gb3"
+                    "gb4 gb5 gb6 gb6";
+        &__info{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            background-color: $bckg-description;
+            min-height: 550px;
+            border: solid yellow 1px;
+            &:nth-child(1){
+                grid-area: gb1;
+            }
+            &:nth-child(2){
+                grid-area: gb2;
+            }
+            &:nth-child(3){
+                grid-area: gb3;
+            }
+            &:nth-child(4){
+                grid-area: gb4;
+            }
+            &:nth-child(5){
+                grid-area: gb5;
+            }
+            &:nth-child(6){
+                grid-area: gb6;
+            }
+            &:hover{
+                background-color: $another-color;
+                
+            }
+            &:hover &-subtitle{
+                color: #2d3651;
+            }
+
+            &:hover img{
+                transform: scale(1.1);
+            }
+            &-img{
+                display: block;
+                flex: 0 0 300px;
+                overflow: hidden;
+                border: 1px green solid;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                    object-position: center;
+                }
+                
+            }
+            &-container{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                // align-items: center;
+                border: 1px red solid;
+                flex: 1 0 250px;
+                // height: 100%;
+                .post__block__title{
+                    text-align: center;
+                    @include post-block-title
+                }  
+                .post__block__subtitle{
+                    @include text-style (16);
+                    letter-spacing: 20;
+                    color:$descr-color;
+                    margin: 0 auto;
+                    padding: 0 20px 0 20px;
+                    text-align: center;
+                }  
+            }    
+            
+        }
+        
+    }
+    
+}
