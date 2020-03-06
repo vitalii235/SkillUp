@@ -1,0 +1,118 @@
+@import "mixins";
+
+input::-webkit-input-placeholder { color: #637588; transition: 0.5s;}
+
+.form{
+    background-color: $form-color;
+    &__container{
+        font-family: Roboto;
+        max-width: 1340px;
+        margin: 0 auto;
+        width: 100%;
+        padding: 30px 10px 30px 10px;
+    }
+    &__form{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        @media (max-width: 767.99px)  and (min-width: 576px){
+            flex-wrap:wrap;
+        }
+        .form-type{
+            padding: 0 10px;
+            display: flex;
+            width: 100%;
+            position: relative;
+            
+            &__name{
+                display: block;
+                height: 60px;
+                @include form-text;
+                padding: 0 0 0 36px;
+                width: 100%;
+                background-color: $input-color;
+                border-bottom: 2px solid #4c536a;
+                // 
+                border-top: 2px solid transparent;
+                border-left: 2px solid transparent;
+                border-right: 2px solid transparent;
+                // 
+                caret-color: #fff;
+                &:hover{
+                    transition: 0.5s;
+                    background-color: #4c546b;
+                    border-bottom: 2px solid #fff;
+                    &::-webkit-input-placeholder { color: #fff; transition: 0.5s;}
+                    border-top: 2px solid #5e6579;
+                    border-left: 2px solid #5e6579;
+                    border-right: 2px solid #5e6579;
+                }
+                &:focus{
+                    transition: 0.5s;
+                    background-color: #4c546b;
+                    border-bottom: 2px solid #fff;
+                    &::-webkit-input-placeholder { color: #fff; transition: 0.5s;}
+                    border-top: 2px solid #5e6579;
+                    border-left: 2px solid #5e6579;
+                    border-right: 2px solid #5e6579;
+                }
+            }
+            &__email{
+                display: block;
+                height: 60px;
+                @include form-text;
+                padding: 0 0 0 36px;
+                width: 100%;
+                background-color: $input-color;
+                border-bottom: 2px solid #4c536a;
+                transition: 0.5s;
+                // 
+                border-top: 2px solid transparent;
+                border-left: 2px solid transparent;
+                border-right: 2px solid transparent;
+                // 
+                caret-color: #fff;
+                &:hover{
+                    transition: 0.5s;
+                    background-color: #4c546b;
+                    border-bottom: 2px solid #fff;
+                    &::-webkit-input-placeholder { color: #fff; transition: 0.5s;}
+                    border-top: 2px solid #5e6579;
+                    border-left: 2px solid #5e6579;
+                    border-right: 2px solid #5e6579;
+                }
+                &:focus{
+                    transition: 0.5s;
+                    background-color: #4c546b;
+                    border-bottom: 2px solid #fff;
+                    &::-webkit-input-placeholder { color: #fff; transition: 0.5s;}
+                    border-top: 2px solid #5e6579;
+                    border-left: 2px solid #5e6579;
+                    border-right: 2px solid #5e6579;
+                }
+            }
+            &__submit{
+                display: block;
+                height: 60px;
+                @include form-text;
+                width: 100%;
+                background-color: #424B63;
+                border-bottom: 2px solid #5D6375;
+                color: #fff;
+                transition: 0.5s;
+                // 
+                border-top: 2px solid transparent;
+                border-left: 2px solid transparent;
+                border-right: 2px solid transparent;
+                // 
+                &:hover{
+                    background-color: $color-hover;
+                    transition: 0.5s;
+                    border-bottom: none;
+                    border: 2px solid #fff;
+                }
+                
+            }
+        }
+    }
+}
