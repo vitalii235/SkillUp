@@ -10,6 +10,12 @@ input::-webkit-input-placeholder { color: #637588; transition: 0.5s;}
         margin: 0 auto;
         width: 100%;
         padding: 30px 10px 30px 10px;
+        @media (max-width: 767.99px)  and (min-width: 576px){
+            padding: 0 10px 0 10px;
+        }
+        @media (max-width: 575.99px){
+            padding: 0 10px 0 10px;
+        }
     }
     &__form{
         display: flex;
@@ -18,15 +24,45 @@ input::-webkit-input-placeholder { color: #637588; transition: 0.5s;}
         @media (max-width: 767.99px)  and (min-width: 576px){
             flex-wrap:wrap;
         }
+        @media (max-width: 575.99px){
+            flex-direction: column;
+        }
         .form-type{
             padding: 0 10px;
             display: flex;
             width: 100%;
             position: relative;
-            
+            &:nth-child(1){
+                @media (max-width: 767.99px)  and (min-width: 576px){
+                    flex: 0 1 100%;
+                    padding:20px 10px 0 10px
+                }
+                @media (max-width: 575.99px){
+                    padding:20px 10px 0 10px
+                }
+            }
+            &:nth-child(2){
+                @media (max-width: 767.99px)  and (min-width: 576px){
+                    flex: 0 1 50%;
+                    padding: 20px 10px 20px 10px;
+                }
+                @media (max-width: 575.99px){
+                    padding:20px 10px 0 10px
+                }
+            }
+            &:nth-child(3){
+                @media (max-width: 767.99px)  and (min-width: 576px){
+                    flex: 0 1 50%;
+                    padding: 20px 10px 20px 10px;
+                }
+                @media (max-width: 575.99px){
+                    padding:20px 10px 20px 10px
+                }
+            }
+           
             &__name{
                 display: block;
-                height: 60px;
+                height: 56px;
                 @include form-text;
                 padding: 0 0 0 36px;
                 width: 100%;
@@ -56,6 +92,7 @@ input::-webkit-input-placeholder { color: #637588; transition: 0.5s;}
                     border-left: 2px solid #5e6579;
                     border-right: 2px solid #5e6579;
                 }
+                
             }
             &__email{
                 display: block;
@@ -90,6 +127,7 @@ input::-webkit-input-placeholder { color: #637588; transition: 0.5s;}
                     border-left: 2px solid #5e6579;
                     border-right: 2px solid #5e6579;
                 }
+                
             }
             &__submit{
                 display: block;
@@ -100,6 +138,7 @@ input::-webkit-input-placeholder { color: #637588; transition: 0.5s;}
                 border-bottom: 2px solid #5D6375;
                 color: #fff;
                 transition: 0.5s;
+                padding-top: 2px;
                 // 
                 border-top: 2px solid transparent;
                 border-left: 2px solid transparent;
@@ -111,6 +150,7 @@ input::-webkit-input-placeholder { color: #637588; transition: 0.5s;}
                     border-bottom: none;
                     border: 2px solid #fff;
                 }
+                
                 
             }
         }
